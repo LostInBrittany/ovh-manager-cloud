@@ -1,5 +1,17 @@
-<div class="metrics__quotas">
-    <div class="metrics__row">
-        <h3 class="oui-header_3" data-translate="metrics_quotas_title"></h3>
+<section class="container-fluid cui-page__content cui-page__content-flex metrics__quota">
+    <div class="row d-lg-flex">
+        <div class="col-xm-12 col-md-5">
+            <cui-tile data-title="'metrics_tiles_overquota_title' | translate" class="h-100">
+                <div class="cui-tile__body">
+                    <div class="oui-input-formfield">
+                        <input type="range" id="text" name="text" min=0 max=99999 class="oui-input" value="Input text">
+                        <label for="text" class="oui-label">Nouvelle valeur de quota de dépassement</label>
+                    </div>
+                    <button class="oui-button oui-button_full-width oui-button_primary">
+                        Mise-à-jour
+                    </button>
+                </div>
+            </cui-tile>
+        </div>
     </div>
-</div>
+</section>

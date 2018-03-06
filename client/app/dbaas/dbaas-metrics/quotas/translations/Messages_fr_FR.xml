@@ -52,6 +52,8 @@
    <translation id="metrics_setting_name_updated" qtlid="439905">Nom du projet modifié</translation>
    <translation id="metrics_upgrade_title" qtlid="403619">Migrer vers un plan supérieur</translation>
    <translation id="metrics_purchase" qtlid="43558">Commander</translation>
+   <translation id="metrics_tiles_overquota_title" qtlid="43559">Quota de dépassement</translation>
+
 
 
    <translation id="metrics_quotas_title">Quotas</translation>
