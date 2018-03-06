@@ -82,5 +82,17 @@ angular.module("managerApp").config($stateProvider => {
                 }
             },
             translations: ["common", "dbaas/dbaas-metrics", "dbaas/dbaas-metrics/platform"]
+        })        
+        .state("dbaas.metrics.detail.upgrade", {
+            url: "/upgrade",
+            views: {
+                metricsHeader,
+                metricsContent: {
+                    templateUrl: "app/dbaas/dbaas-metrics/upgrade/metrics-upgrade.html",
+                    controller: "MetricsUpgradeCtrl",
+                    controllerAs: "MetricsUpgradeCtrl"
+                }
+            },
+            translations: ["common", "dbaas/dbaas-metrics", "dbaas/dbaas-metrics/upgrade"]
         });
 });
