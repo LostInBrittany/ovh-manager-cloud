@@ -4,7 +4,7 @@
    <translation id="metrics_tab_dashboard" qtlid="27643">Accueil</translation>
    <translation id="metrics_tab_token" qtlid="403164">Tokens</translation>
    <translation id="metrics_tab_platform" qtlid="123607">Plateformes</translation>
-   <translation id="metrics_tab_upgrade">Migrer vers un plan supérieur</translation>
+   <translation id="metrics_tab_quotas">Quotas</translation>
 
    <translation id="metrics_guides" qtlid="300370">Guides</translation>
    <translation id="metrics_guides_footer" qtlid="406905">Tous les guides OVH</translation>
@@ -52,4 +52,7 @@
    <translation id="metrics_setting_name_updated" qtlid="439905">Nom du projet modifié</translation>
    <translation id="metrics_upgrade_title" qtlid="403619">Migrer vers un plan supérieur</translation>
    <translation id="metrics_purchase" qtlid="43558">Commander</translation>
+
+
+   <translation id="metrics_quotas_title">Quotas</translation>
 </translations>

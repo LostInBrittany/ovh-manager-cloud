@@ -1,5 +1,5 @@
 (() => {
-    class MetricsUpgradeCtrl {     
+    class MetricsQuotasCtrl {     
         constructor ($stateParams, $translate, METRICS_ENDPOINTS, MetricService, ovhDocUrl) {
             this.$stateParams = $stateParams;
             this.serviceName = $stateParams.serviceName;
@@ -15,6 +15,6 @@
             this.loading = true;
         } 
     }
-    angular.module("managerApp").controller("MetricsUpgradeCtrl", MetricsUpgradeCtrl);
+    angular.module("managerApp").controller("MetricsQuotasCtrl", MetricsQuotasCtrl);
 })();
   
