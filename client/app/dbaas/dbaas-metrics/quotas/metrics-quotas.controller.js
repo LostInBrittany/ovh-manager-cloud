@@ -1,5 +1,6 @@
 (() => {
-    class MetricsQuotasCtrl {     
+    class MetricsQuotasCtrl {
+
         constructor ($stateParams, $translate, METRICS_ENDPOINTS, MetricService, ovhDocUrl) {
             this.$stateParams = $stateParams;
             this.serviceName = $stateParams.serviceName;
@@ -8,13 +9,24 @@
             this.MetricService = MetricService;
             this.ovhDocUrl = ovhDocUrl;
             this.overquota = 0;
-            this.loading = false;
+            this.srv = {};
         }
 
         $onInit () {
             this.loading = true;
-        } 
+             this.initTiles();
+        }
+
+        initTiles () {
+
+            this.MetricService.getService(this.serviceName)
+            .then(service => {
+                this.srv = service.data;
+            })
+            .finally(() => {
+                this.loading.service = false;
+            });
+        }
     }
     angular.module("managerApp").controller("MetricsQuotasCtrl", MetricsQuotasCtrl);
 })();
-  

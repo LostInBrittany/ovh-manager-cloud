@@ -2,12 +2,17 @@
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-5">
             <cui-tile data-title="'metrics_tiles_overquota_title' | translate" class="h-100">
+                    <div ng-if="MetricsQuotasCtrl.srv.bmVersion != 3" class="oui-message oui-message_warning" role="alert">
+                            <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor" aria-hidden="true"></i>
+                            <p class="oui-message__body">Fonctionalité non-supportée par votre offre actuelle</p>
+                          </div>
                 <div class="cui-tile__body">
                     <div class="oui-input-formfield">
-                        <input type="range" id="text" name="text" min=0 max=99999 ng-model="MetricsQuotasCtrl.overquota" value="Input text">
-                        <label for="text" class="oui-label">Nouvelle valeur de quota de dépassement: {{MetricsQuotasCtrl.overquota}}</label>
+                        <input type="range" data-ng-disabled="MetricsQuotasCtrl.srv.bmVersion != 3" min="{{MetricsQuotasCtrl.srv.quota.mads}}" max="{{MetricsQuotasCtrl.srv.limitOverQuota}}" ng-model="MetricsQuotasCtrl.overquota" value="Input text">
+                        <label for="text" class="oui-label">Nouvelle valeur de quota de dépassement</label>
+                        <input type="number" ng-model="MetricsQuotasCtrl.overquota" placeholder="Enter a name here">
                     </div>
-                    <button class="oui-button oui-button_full-width oui-button_primary">
+                    <button data-ng-disabled="MetricsQuotasCtrl.srv.bmVersion != 3" class="oui-button oui-button_full-width oui-button_primary">
                         Mise-à-jour
                     </button>
                 </div>
