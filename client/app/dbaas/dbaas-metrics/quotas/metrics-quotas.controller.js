@@ -7,7 +7,7 @@
             this.METRICS_ENDPOINTS = METRICS_ENDPOINTS;
             this.MetricService = MetricService;
             this.ovhDocUrl = ovhDocUrl;
-
+            this.overquota = 0;
             this.loading = false;
         }
 

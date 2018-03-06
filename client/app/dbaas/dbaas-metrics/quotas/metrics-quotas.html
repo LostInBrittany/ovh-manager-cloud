@@ -4,8 +4,8 @@
             <cui-tile data-title="'metrics_tiles_overquota_title' | translate" class="h-100">
                 <div class="cui-tile__body">
                     <div class="oui-input-formfield">
-                        <input type="range" id="text" name="text" min=0 max=99999 class="oui-input" value="Input text">
-                        <label for="text" class="oui-label">Nouvelle valeur de quota de dépassement</label>
+                        <input type="range" id="text" name="text" min=0 max=99999 ng-model="MetricsQuotasCtrl.overquota" value="Input text">
+                        <label for="text" class="oui-label">Nouvelle valeur de quota de dépassement: {{MetricsQuotasCtrl.overquota}}</label>
                     </div>
                     <button class="oui-button oui-button_full-width oui-button_primary">
                         Mise-à-jour
