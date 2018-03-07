@@ -6,6 +6,25 @@
       padding: @spacing-top @spacing-side_l;
       font-family: "Source Sans Pro";
       font-size: 1.6rem;
+
+      .cui-tile {
+        padding-left: 48px;
+        padding-right: 48px;
+
+        .cui-tile__body>* {
+          margin-bottom: 16px;
+        }
+
+        #overquotaStatus {
+          display: flex;
+          justify-content: flex-end;
+
+          &>* {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
     }
   
   }

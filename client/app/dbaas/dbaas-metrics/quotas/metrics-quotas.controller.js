@@ -17,15 +17,19 @@
              this.initTiles();
         }
 
+        isBmVersionGE3() {
+            return this.srv.bmVersion >= 3;
+        }
+
         initTiles () {
 
             this.MetricService.getService(this.serviceName)
-            .then(service => {
-                this.srv = service.data;
-            })
-            .finally(() => {
-                this.loading.service = false;
-            });
+                .then(service => {
+                    this.srv = service.data;
+                })
+                .finally(() => {
+                    this.loading.service = false;
+                });
         }
 
         confirmOverQuota () {

@@ -1,23 +1,32 @@
-<section class="container-fluid cui-page__content cui-page__content-flex metrics__quota">
+<section class="container-fluid cui-page__content cui-page__content-flex metrics__quotas">
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-5">
             <cui-tile data-title="'metrics_tiles_overquota_title' | translate" class="h-100">
-                <div ng-if="MetricsQuotasCtrl.srv.bmVersion != 3" class="oui-message oui-message_warning" role="alert">
+                <div ng-if="!MetricsQuotasCtrl.isBmVersionGE3()" class="oui-message oui-message_warning" role="alert">
                     <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor" aria-hidden="true"></i>
                     <p class="oui-message__body">Fonctionalité non-supportée par votre offre actuelle</p>
                 </div>
-                <div class="cui-tile__body">
+                
+                <div ng-if="MetricsQuotasCtrl.isBmVersionGE3()" class="cui-tile__body clearfix">
                     <label for="text" class="oui-label">Nouvelle valeur de quota de dépassement</label>
 
 
-                    <div flat-input-container class="input-group pull-right">
-                        <input type="number" class="text-right" data-ng-model="MetricsQuotasCtrl.overquota" min="{{ MetricsQuotasCtrl.srv.quota.mads}}"
-                            max="{{MetricsQuotasCtrl.srv.limitOverQuota}}">
-                        <div class="input-group-addon" data-translate="metrics_mads"></div>
-                    </div>
-                    <ovh-slider class="input-group pull-right" data-floor="{{MetricsQuotasCtrl.srv.quota.mads}}" data-ceiling="{{MetricsQuotasCtrl.srv.limitOverQuota}}"
-                        data-step="1" data-ng-model="MetricsQuotasCtrl.overquota" disabled="MetricsQuotasCtrl.srv.bmVersion != 3"
-                        markers-count="7" markers-label-low="{{ MetricsQuotasCtrl.srv.quota.mads  }}" markers-label-high="{{ MetricsQuotasCtrl.srv.limitOverQuota  }}"></ovh-slider>
+                    <ovh-slider 
+                            class="input-group pull-right" 
+                            data-floor="{{MetricsQuotasCtrl.srv.quota.ref_mads}}" 
+                            data-ceiling="{{MetricsQuotasCtrl.srv.limitOverQuota}}"
+                            data-step="1" 
+                            data-ng-model="MetricsQuotasCtrl.overquota" 
+                            disabled="MetricsQuotasCtrl.srv.bmVersion != 3"
+                            markers-count="7" 
+                            markers-label-low="{{ MetricsQuotasCtrl.srv.quota.ref_mads  }} {{ 'metrics_series' | translate}}" 
+                            markers-label-high="{{ MetricsQuotasCtrl.srv.limitOverQuota  }} {{ 'metrics_series' | translate}}"></ovh-slider>
+
+                        <div id="overquotaStatus" flat-input-container class="input-group pull-right" style="width:240px;">
+                            <input type="number" class="text-right" data-ng-model="MetricsQuotasCtrl.overquota" min="{{ MetricsQuotasCtrl.srv.quota.mads}}"
+                                max="{{MetricsQuotasCtrl.srv.limitOverQuota}}">
+                            <div class="input-group-addon" data-translate="metrics_mads"></div>
+                        </div>
 
                     <button data-ng-disabled="MetricsQuotasCtrl.srv.bmVersion != 3" class="oui-button oui-button_full-width oui-button_primary input-group pull-right"
                         ng-click="MetricsQuotasCtrl.confirmOverQuota()">
