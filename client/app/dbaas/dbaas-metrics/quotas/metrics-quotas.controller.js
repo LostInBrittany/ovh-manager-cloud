@@ -27,6 +27,10 @@
                 this.loading.service = false;
             });
         }
+
+        confirmOverQuota () {
+            console.log("called function");
+        }
     }
     angular.module("managerApp").controller("MetricsQuotasCtrl", MetricsQuotasCtrl);
 })();
